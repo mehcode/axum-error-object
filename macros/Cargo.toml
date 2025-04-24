@@ -2,6 +2,11 @@
 name = "axum-error-object-macros"
 version = "0.0.1"
 edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/mehcode/axum-error-object"
+authors = [
+    "Ryan Leckey <leckey.ryan@gmail.com>",
+]
 
 [lib]
 proc-macro = true
