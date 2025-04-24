@@ -13,6 +13,14 @@ impl ErrorResponse {
         Self { response, source: None }
     }
 
+    pub(crate) fn from_status(status: StatusCode) -> Self {
+        Self { response: status.into_response(), source: None }
+    }
+
+    pub(crate) fn with_source(self, source: anyhow::Error) -> Self {
+        Self { response: self.response, source: Some(source) }
+    }
+
     /// Returns the wrapped error contained by this error response.
     pub fn error(&self) -> Option<&anyhow::Error> {
         self.source.as_ref()

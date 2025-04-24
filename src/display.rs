@@ -4,7 +4,6 @@ pub trait DisplayKind {
     fn axum_error_object_title(&self) -> Option<String>;
 }
 
-
 // if the type implements Display
 impl<T: Display> DisplayKind for T {
     fn axum_error_object_title(&self) -> Option<String> {

@@ -12,7 +12,7 @@ axum-error-object = "0.0.1"
 ## Usage
 
 ```rust
-use axum_error_object::{Result, Status, IntoErrorResponse};
+use axum_error_object::{Result, Status, Context, IntoErrorResponse};
 use serde::Serialize;
 use derive_more::Display;
 
@@ -37,8 +37,8 @@ async fn handler() -> Result<StatusCode> {
   call_maybe()?;
 
   // will return an opaque 404 on None or error
-  call_fallible().context(StatusCode::NOT_FOUND)?;
-  call_maybe().context(StatusCode::NOT_FOUND)?;
+  call_fallible().status(StatusCode::NOT_FOUND)?;
+  call_maybe().status(StatusCode::NOT_FOUND)?;
 
   // will return the following 420 response:
   //  {
@@ -48,7 +48,7 @@ async fn handler() -> Result<StatusCode> {
   //  }
   // preserves the original error information as source (does not return from the API)
   // useful for logs and inspection
-  call_fallible().with_context(|_| AppError::WhoaThere { that: 30 })?;
+  call_fallible().with_context(|| AppError::WhoaThere { that: 30 })?;
   call_fallible().context(AppError::OhNo)?;
   call_maybe().context(AppError::OhNo)?;
 
