@@ -1,5 +1,6 @@
 [package]
 name = "axum-error-object-macros"
+description = "Macros for axum-error-object. Not intended to be used directly."
 version = "0.0.1"
 edition = "2024"
 license = "MIT OR Apache-2.0"
