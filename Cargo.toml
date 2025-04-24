@@ -1,0 +1,17 @@
+[workspace]
+members = [".", "macros"]
+
+[package]
+name = "axum-error-object"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+axum = "0.8.3"
+axum-error-object-macros = { path = "./macros", version = "0.0.1" }
+serde = { version = "1.0.219", features = ["derive"] }
+
+[dev-dependencies]
+derive_more = { version = "2.0.1", features = ["display"] }
+tokio = { version = "1.44.2", features = ["full"] }
