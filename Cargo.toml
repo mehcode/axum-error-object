@@ -6,7 +6,7 @@ name = "axum-error-object"
 readme = "README.md"
 description = "Provides a `Result<T>` type and related utility types that can be used to holistically provide object response errors."
 documentation = "https://docs.rs/axum-error-object"
-version = "0.0.2"
+version = "0.0.4"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/mehcode/axum-error-object"
@@ -18,7 +18,7 @@ authors = [
 [dependencies]
 anyhow = "1.0.98"
 axum = "0.8.3"
-axum-error-object-macros = { path = "./macros", version = "0.0.1" }
+axum-error-object-macros = { path = "./macros", version = "0.0.4" }
 serde = { version = "1.0.219", features = ["derive"] }
 tracing = "0.1.41"
 
