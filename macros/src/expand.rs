@@ -43,7 +43,7 @@ fn expand_enum(
                 let title = (&value).axum_error_object_title();
 
                 let status = match value {
-                    #(#status_arms)*
+                    #(#status_arms),*
                 };
 
                 let object = ::axum_error_object::ErrorObject {

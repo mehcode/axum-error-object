@@ -42,6 +42,10 @@ where
 
 impl IntoResponse for ErrorResponse {
     fn into_response(self) -> Response {
+        if let Some(source) = self.source {
+            tracing::error!("response error: {source:?}");
+        }
+
         self.response
     }
 }
