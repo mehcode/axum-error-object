@@ -13,7 +13,7 @@ impl ErrorResponse {
         Self { response, source: None }
     }
 
-    pub(crate) fn from_status(status: StatusCode) -> Self {
+    pub fn from_status(status: StatusCode) -> Self {
         Self { response: status.into_response(), source: None }
     }
 
